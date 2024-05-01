@@ -6,15 +6,17 @@ vim.opt.relativenumber = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.expandtab = false
+vim.opt.expandtab = true
 
 vim.opt.smartindent = true
+vim.opt.autoindent = true
+vim.opt.cindent = true
 
-vim.opt.wrap = false
+vim.opt.wrap = true
 vim.opt.swapfile = false
 vim.opt.undofile = true
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
@@ -32,13 +34,14 @@ vim.opt.listchars = {
   nbsp = '␣',
 }
 
-vim.opt.foldmethod = 'syntax'
+vim.opt.foldmethod = 'marker'
+vim.opt.foldlevel = 0
 vim.opt.syntax = 'on'
 
 vim.opt.cindent = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-vim.opt.foldmethod = 'expr'
-vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-vim.opt.foldlevel = 1
+-- vim.opt.foldmethod = 'expr'
+-- vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+-- vim.opt.foldlevel = 1
