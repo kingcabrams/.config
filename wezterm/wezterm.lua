@@ -1,29 +1,41 @@
--- Pull in the wezterm API
-
-require(".config/wezterm/wezterm.lua")
 local wezterm = require("wezterm")
 
--- This will hold the configuration.
+return {
+	font = wezterm.font("JetBrainsMono NF", { weight = "Medium", stretch = "Normal", style = "Normal" }),
 
-local config = wezterm.config_builder()
-
--- This is where you actually apply your config choices
-
--- For example, changing the color scheme:
-
-config.color_scheme = "Solarized (light) (terminal.sexy)"
-config.font = wezterm.font("JetBrains Mono")
-config.font_size = 16
-
-config.tab_bar_at_bottom = true
-config.use_fancy_tab_bar = false
-config.enable_scroll_bar = false
-config.window_padding = {
-	left = 0,
-	right = 0,
-	top = 0,
-	bottom = 0,
+	font_rules = {
+		{
+			italic = true,
+			font = wezterm.font("JetBrainsMono NF", { weight = "Medium", stretch = "Normal", style = "Italic" }),
+		},
+		{
+			intensity = "Bold",
+			font = wezterm.font("JetBrainsMono NF", { weight = "Bold", stretch = "Normal", style = "Normal" }),
+		},
+		{
+			intensity = "Bold",
+			italic = true,
+			font = wezterm.font("JetBrainsMono NF", { weight = "Bold", stretch = "Normal", style = "Italic" }),
+		},
+	},
+	font_size = 18.0,
+	color_scheme = "Catppuccin",
+	colors = {
+		indexed = { [16] = "#F8BD96", [17] = "#F5E0DC" },
+		split = "#161320",
+		visual_bell = "#302D41",
+	},
+	window_padding = {
+		left = 15,
+		right = 15,
+		top = 10,
+		bottom = 0,
+	},
+	window_background_opacity = 0.92,
+	window_decorations = "RESIZE",
+	enable_tab_bar = false,
+	scrollback_lines = 5000,
+	enable_scroll_bar = false,
+	check_for_updates = false,
+	max_fps = 120,
 }
-
--- and finally, return the configuration to wezterm
-return config

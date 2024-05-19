@@ -4,9 +4,6 @@ ui {
     }
 }
  
-simplified_ui true
-pane_frames false
-
 keybinds {
     normal {
         // uncomment this and adjust key if using copy_on_select=false
@@ -348,7 +345,7 @@ themes {
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "catppuccin-mocha"
+theme "dracula"
 
 // The name of the default layout to load on startup
 // Default: "default"

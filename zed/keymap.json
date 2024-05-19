@@ -1,0 +1,12 @@
+[
+  {
+    "bindings": {
+      "cmd-shift-j": "terminal_panel::ToggleFocus",
+      "ctrl-shift-q": "editor::CopyRelativePath",
+      "ctrl-n": [
+        "workspace::SendKeystrokes",
+        "ctrl-shift-q cmd-shift-j cmd cmd cmd run space cmd-v enter cmd cmd cmd"
+      ]
+    }
+  }
+]
