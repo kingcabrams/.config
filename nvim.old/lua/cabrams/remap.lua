@@ -10,11 +10,16 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
+vim.keymap.set('n', 'j', 'gj')
+vim.keymap.set('n', 'k', 'gk')
+
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
-vim.keymap.set('x', '<leader>p', [["_dP]])
-vim.keymap.set('n', '<leader>t', '<cmd>Test<CR>')
-vim.keymap.set('n', '<leader>ss', '<cmd>Submit<CR>')
+vim.keymap.set('n', 'gn', '<cmd>bnext<CR>')
+vim.keymap.set('n', 'gp', '<cmd>bprev<CR>')
+vim.keymap.set({'n', 'v'}, 'gl', '$')
+vim.keymap.set({'n', 'v'}, 'gh', '^')
+
 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
@@ -23,9 +28,6 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
-vim.g.UltiSnipsExpandTrigger = '<tab>'
-vim.g.UltiSnipsJumpForwardTrigger = '<tab>'
-vim.g.UltiSnipsJumpBackwardTrigger = '<s-tab>'
-
-vim.keymap.set('n', '<C-h>', ':cnext <CR>', { desc = 'Move to next option in quickfix list' })
-vim.keymap.set('n', '<C-l>', ':cprev <CR>', { desc = 'Move to previous option in quickfix list' })
+vim.g.UltiSnipsExpandTrigger = '<C-k>'
+vim.g.UltiSnipsJumpForwardTrigger = '<C-k>'
+vim.g.UltiSnipsJumpBackwardTrigger = '<C-j>'
