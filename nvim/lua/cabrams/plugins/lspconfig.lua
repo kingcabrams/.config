@@ -74,7 +74,7 @@ return { -- LSP Configuration & Plugins
       }
 
       require('mason').setup()
-      require('fidget').setup()
+      -- require('fidget').setup()
 
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {

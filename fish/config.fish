@@ -1,16 +1,16 @@
 function fish_greeting
-    fastfetch
 end
 
 fish_add_path /opt/homebrew/bin
 fish_add_path /Users/cabrams/.cargo/bin
-fish_add_path /Users/cabrams/.config/emacs/bin
 fish_add_path /opt/homebrew/opt/curl/bin
 fish_vi_key_bindings
 
 alias vim="nvim"
+alias python="python3"
 alias ls="eza --icons --group-directories-first"
 alias config="z ~/.config"
+alias contest="nvim --headless --listen localhost:9034& && neovide --fork --server localhost:9034 --frame buttonless"
 
 zoxide init fish --cmd z | source
 

@@ -1,3 +1,3 @@
 {"raw_cookie":"X-User=9b4b019054eeb6e3611af464a3a2234b5244333e1a2f2d85bb4c216a3f387d4bd29d233b742781fc; Path=/; Max-Age=2592000; Expires=Sun, 14 Jul 2024 13:44:43 GMT","path":["/",true],"domain":{"HostOnly":"codeforces.com"},"expires":{"AtUtc":"2024-07-14T13:44:43Z"}}
-{"raw_cookie":"X-User-Sha1=7ad3f4c9027e828165d136b6984f39cab33c7491; Path=/; Max-Age=31536000; Expires=Sat, 14 Jun 2025 13:44:43 GMT","path":["/",true],"domain":{"HostOnly":"codeforces.com"},"expires":{"AtUtc":"2025-06-14T13:44:43Z"}}
-{"raw_cookie":"39ce7=CFL5RwdN; Path=/; Max-Age=1000000; Expires=Wed, 26 Jun 2024 03:31:16 GMT","path":["/",true],"domain":{"HostOnly":"codeforces.com"},"expires":{"AtUtc":"2024-06-26T03:31:16Z"}}
+{"raw_cookie":"X-User-Sha1=7ad3f4c9027e828165d136b6984f39cab33c7491; Path=/; Max-Age=31536000; Expires=Mon, 16 Jun 2025 19:54:23 GMT","path":["/",true],"domain":{"HostOnly":"codeforces.com"},"expires":{"AtUtc":"2025-06-16T19:54:23Z"}}
+{"raw_cookie":"39ce7=CFLChkTn; Path=/; Max-Age=1000000; Expires=Fri, 28 Jun 2024 09:41:03 GMT","path":["/",true],"domain":{"HostOnly":"codeforces.com"},"expires":{"AtUtc":"2024-06-28T09:41:03Z"}}

@@ -25,7 +25,6 @@ set('n', 'k', 'gk')
 
 -- Escape to cancel search highlighting
 set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-set('n', '<C-b>', '<cmd>!cargo build<CR>')
 -- noremap <F10> <ESC> :w <CR> :!clang++ -std=c++20 -Wall -Wextra -Wshadow -O2 -o %< % && ./%< < inp<CR>
 
 -- Helix movement commands
@@ -38,16 +37,30 @@ set({ 'n', 'v' }, '<leader>y', [["+y]])
 -- File Explorer
 set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
 set('n', '<leader>df', '<CMD>Oil ~/.config/<CR>', { desc = 'Open dotfiles' })
-
-set('n', '<leader>fr', [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]])
+set('n', '<leader>sr', [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]])
 
 set('n', '<Tab>', '<CMD>tabnext<CR>')
+set('n', '<S-Tab>', '<CMD>tabprev<CR>')
+set('n', '<leader>c', '<CMD>tabclose<CR>')
+set('n', '<leader>x', '<CMD>bd!<CR>')
 
--- Toggle light and dark colorschemes
 set('n', '<leader>tt', function()
   if vim.g.colors_name == 'xcodedarkhc' then
     vim.cmd.colorscheme 'xcodelighthc'
     return
   end
   vim.cmd.colorscheme 'xcodedarkhc'
+end)
+
+-- CompProgramming compile and run bin
+  set('n', '<leader>r', function()
+    vim.cmd('w');
+    local path = vim.fn.expand('%')
+
+    local first_component = string.match(path, "([^/]+)")
+
+    if first_component then
+      local cmd = "cargo run --bin " .. first_component
+      vim.cmd('!' .. cmd)
+    end
 end)

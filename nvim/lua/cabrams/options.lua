@@ -51,10 +51,27 @@ vim.api.nvim_create_autocmd("TermOpen", {
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 
 -- Open a terminal at the bottom of the screen with a fixed height.
-vim.keymap.set("n", ",st", function()
+vim.keymap.set("n", "<leader>tr", function()
   vim.cmd.new()
   vim.cmd.wincmd "J"
   vim.api.nvim_win_set_height(0, 12)
   vim.wo.winfixheight = true
   vim.cmd.term()
+  local cmd = "rust-competitive-helper"
+
+  local function delayedSend()
+    vim.fn.chansend(vim.b.terminal_job_id, cmd .. '\n')
+  end
+
+  vim.defer_fn(delayedSend, 150)
+  vim.cmd('startinsert')
+end)
+
+vim.keymap.set("n", "<leader>tm", function()
+  vim.cmd.new()
+  vim.cmd.wincmd "J"
+  vim.api.nvim_win_set_height(0, 12)
+  vim.wo.winfixheight = true
+  vim.cmd.term()
+  vim.cmd('startinsert')
 end)
