@@ -14,7 +14,6 @@ return {
           typescriptreact = { { 'prettierd', 'prettier' } },
           json = { { 'prettierd', 'prettier' } },
           java = { 'google-java-format' },
-          kotlin = { 'ktlint' },
           markdown = { { 'prettierd', 'prettier' } },
           html = { 'htmlbeautifier' },
           bash = { 'beautysh' },

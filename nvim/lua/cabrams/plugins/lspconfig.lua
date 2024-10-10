@@ -61,6 +61,7 @@ return { -- LSP Configuration & Plugins
         tsserver = {},
         rust_analyzer = {},
         kotlin_language_server = {},
+        typst_lsp = {},
         lua_ls = {
           settings = {
             Lua = {
@@ -74,7 +75,7 @@ return { -- LSP Configuration & Plugins
       }
 
       require('mason').setup()
-      -- require('fidget').setup()
+      require('fidget').setup()
 
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {

@@ -2,7 +2,7 @@ return { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = {'kotlin', 'bash', 'c', 'cpp', 'vim', 'python', 'rust', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
+      ensure_installed = {'kotlin', 'bash', 'c', 'cpp', 'vim', 'python', 'rust', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc', 'typst'},
       auto_install = true,
       highlight = { enable = true },
       indent = { enable = true, disable = { 'ruby' } },
