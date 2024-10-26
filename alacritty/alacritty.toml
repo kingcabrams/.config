@@ -1,0 +1,9 @@
+[shell]
+program = "/opt/homebrew/bin/fish"
+
+[window]
+padding = { x = 2 }
+
+[font]
+normal = { family = "GohuFont 14 Nerd Font", style = "Regular" }
+size = 17
