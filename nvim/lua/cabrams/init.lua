@@ -1,2 +1,2 @@
-require 'cabrams.remap'
-require 'cabrams.options'
+require "cabrams.mappings"
+require "cabrams.options"
