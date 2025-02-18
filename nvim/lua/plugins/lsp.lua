@@ -37,24 +37,26 @@ return {
 				},
 				rust_analyzer = true,
 				pyright = true,
-				clangd = {
-					clangdFileStatus = true,
-				},
+clangd = {
+    cmd = {
+        "clangd",
+        "--compile-commands-dir=" .. vim.fn.getcwd(), -- Ensure correct build directory
+        "--query-driver=/usr/bin/g++-14.2", -- Use G++ 14.2
+        "--clang-tidy",  -- Enable Clang-Tidy for extra linting
+        "--all-scopes-completion",
+        "--completion-style=detailed",
+        "--header-insertion=never",
+    },
+    capabilities = capabilities,
+    settings = {
+        clangdFileStatus = true,
+    },
+    init_options = {
+        compilationDatabasePath = "build", -- Set the path to compile_commands.json
+        fallbackFlags = { "-std=c++2b", "-Wall", "-Wextra", "-I/usr/include/c++/14.2" }, -- Use C++2b standard
+    },
+},
 
-				ocamllsp = {
-					manual_install = true,
-					settings = {
-						codelens = { enable = true },
-						inlayHints = { enable = true },
-					},
-
-					filetypes = {
-						"ocaml",
-						"ocaml.interface",
-						"ocaml.menhir",
-						"ocaml.cram",
-					},
-				},
 			}
 
 			local servers_to_install = vim.tbl_filter(function(key)
