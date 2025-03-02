@@ -18,7 +18,6 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Set up lazy
 require("lazy").setup({
-	"tpope/vim-sleuth", -- Automatic tab size detection based on filetype
 	{
 		"folke/trouble.nvim",
 		lazy = false,
@@ -45,13 +44,13 @@ require("lazy").setup({
 		md = "Trouble",
 	},
 	{
-	  "folke/tokyonight.nvim",
-	  lazy = false,
-	  priority = 1000,
-	  opts = {},
-	  config = function()
-		  vim.cmd("colorscheme tokyonight-storm")
-	  end,
+		"loctvl842/monokai-pro.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+		config = function()
+			vim.cmd("colorscheme monokai-pro")
+		end,
 	},
 	{
 		"nvim-lualine/lualine.nvim",
@@ -60,6 +59,8 @@ require("lazy").setup({
 			require("lualine").setup({
 				options = {
 					theme = "auto",
+					component_separators = "",
+					section_separators = "",
 				},
 			})
 		end,
@@ -82,43 +83,6 @@ require("lazy").setup({
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		config = true,
-	},
-	{ "nvim-tree/nvim-tree.lua", opts = {} },
-	{ "akinsho/toggleterm.nvim", version = "*", config = function()
-		require("toggleterm").setup({
-			open_mapping = [[<c-;>]],
-			direction = "float",
-			float_opts = {
-				border = "curved",
-			}
-		})
-	end},
-	{
-		"akinsho/bufferline.nvim",
-		version = "*",
-		dependencies = "nvim-tree/nvim-web-devicons",
-		opts = {
-			options = {
-				modified_icon = "",
-
-				show_close_icon = false,
-				show_buffer_close_icons = false,
-
-				indicator = {
-					style = "none",
-				},
-
-				view = "multiwindow",
-				separator_style = "thin",
-				always_show_bufferline = false,
-				auto_toggle_bufferline = true,
-				offsets = {
-					{
-						filetype = "NvimTree",
-					},
-				},
-			},
-		},
 	},
 	{
 		"folke/flash.nvim",
@@ -143,7 +107,7 @@ require("lazy").setup({
 			},
 		},
 	},
-	{ -- Autoformat
+    { -- Autoformat
 		"stevearc/conform.nvim",
 		keys = {
 			{
@@ -165,29 +129,6 @@ require("lazy").setup({
 			},
 		},
 	},
-	{ -- Collection of helpful plugins
-		"echasnovski/mini.nvim",
-		config = function()
-			require("mini.ai").setup()
-			require("mini.surround").setup({
-				mappings = {
-					add = "ysa", -- Add surrounding in Normal and Visual modes
-					delete = "ysd", -- Delete surrounding
-					find = "ysf", -- Find surrounding (to the right)
-					find_left = "ysF", -- Find surrounding (to the left)
-					replace = "ysr", -- Replace surrounding
-				},
-			})
-			require("mini.move").setup({
-				mappings = {
-					left = "<",
-					right = ">",
-					down = "J",
-					up = "K",
-				},
-			})
-		end,
-	},
 	{ -- Highlight, edit, and navigate code
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
@@ -207,76 +148,6 @@ require("lazy").setup({
 			},
 			auto_install = true,
 		},
-	},
-	{
-		"xiyaowong/transparent.nvim",
-		config = function()
-			require("transparent").setup({
-				groups = { -- table: default groups
-					"Normal",
-					"NormalNC",
-					"Comment",
-					"Constant",
-					"Special",
-					"Identifier",
-					"Statement",
-					"PreProc",
-					"Type",
-					"Underlined",
-					"Todo",
-					"String",
-					"Function",
-					"Conditional",
-					"Repeat",
-					"Operator",
-					"Structure",
-					"LineNr",
-					"NonText",
-					"SignColumn",
-					"CursorLineNr",
-					"EndOfBuffer",
-					"NormalSB",
-					"Pmenu",
-				},
-				extra_groups = { -- table: additional groups that should be cleared
-					"NormalFloat", -- plugins which have float panel such as Lazy, Mason, LspInfo
-					"FloatBorder",
-					"NvimTreeWinSeparator",
-					"NvimTreeNormal",
-					"NvimTreeNormalNC",
-					"TroubleNormal",
-					"TelescopeNormal",
-					"TelescopeBorder",
-					"WhichKeyFloat",
-					"TroubleNormal ",
-					"TroubleError ",
-					"TroubleWarnin",
-					"TroubleHint ",
-					"TroubleInformation ",
-					"NotifyINFOBody",
-					"NotifyERRORBody",
-					"NotifyWARNBody",
-					"NotifyDEBUGBody",
-					"NotifyTRACEBody",
-					"NotifyINFOBorder",
-					"NotifyERRORBorder",
-					"NotifyWARNBorder",
-					"NotifyDEBUGBorder",
-					"NotifyTRACEBorder",
-					"TroubleText ",
-					"TroubleSign ",
-					"TroubleFoldIcon ",
-					"TroubleIndent ",
-					"TroubleCount ",
-					"TroubleError ",
-					"TroubleWarning",
-					"TroubleHint",
-					"TroubleInformation",
-					"TroubleDiagnosticLine",
-				},
-				exclude_groups = {}, -- table: groups you don't want to clear
-			})
-		end,
 	},
 	{ -- Completion setup
 		"hrsh7th/nvim-cmp",
