@@ -1,0 +1,37 @@
+[plugins]
+"rocks.nvim" = "2.43.1"
+"rocks-config.nvim" = "3.1.0"
+"rocks-git.nvim" = "2.5.3"
+
+"telescope.nvim" = "scm"
+"nightfox.nvim" = "3.10.0"
+"flash.nvim" = "2.1.0"
+"fidget.nvim" = "1.6.0"
+"rocks-treesitter.nvim" = "1.3.0"
+"rustaceanvim" = "6.0.0"
+"mini.nvim" = "0.15.0"
+
+"blink" = { git = "saghen/blink.cmp", rev = "v1.1.1" }
+"monokai-pro" = { git = "loctvl842/monokai-pro.nvim" }
+
+[treesitter]
+auto_install = true
+
+[config]
+auto_setup = true
+colorscheme = "monokai-pro-classic"
+
+[config.options]
+number = true
+relativenumber = true
+incsearch = true
+tabstop = 4
+shiftwidth = 4
+splitright = true
+splitbelow = true
+swapfile = false
+undofile = true
+expandtab = true
+inccommand = "split"
+signcolumn = "yes"
+scrolloff = 999
