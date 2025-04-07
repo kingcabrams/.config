@@ -18,6 +18,9 @@ set("n", "g*", "g*zz", { silent = true })
 set("v", "<", "<gv")
 set("v", ">", ">gv")
 
+set("n", "<leader>y", ":%y+<CR>", { silent = true })
+set("v", "<leader>y", "\"+y", { silent = true })
+
 
 set("n", "<esc>", function()
   if vim.v.hlsearch == 1 then
@@ -37,16 +40,16 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- rustaceanvim
 local bufnr = vim.api.nvim_get_current_buf() 
 
-set("n", "<leader>a", function()
-    vim.cmd.RustLsp('codeAction')
-  end,
-  { silent = true, buffer = bufnr }
-)
-
-set("n", "K", function() vim.cmd.RustLsp({'hover', 'actions'}) end, { silent = true, buffer = bufnr })
-
-set("n", "gd", vim.lsp.buf.declaration, { buffer = bufnr })
-
+-- set("n", "<leader>a", function()
+--     vim.cmd.RustLsp('codeAction')
+--   end,
+--   { silent = true, buffer = bufnr }
+-- )
+--
+-- set("n", "K", function() vim.cmd.RustLsp({'hover', 'actions'}) end, { silent = true, buffer = bufnr })
+--
+-- set("n", "gd", vim.lsp.buf.declaration, { buffer = bufnr })
+--
 vim.api.nvim_create_autocmd("InsertEnter", {
     callback = function()
         print("insert triggered")

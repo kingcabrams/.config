@@ -7,19 +7,23 @@
 "nightfox.nvim" = "3.10.0"
 "flash.nvim" = "2.1.0"
 "fidget.nvim" = "1.6.0"
-"rocks-treesitter.nvim" = "1.3.0"
 "rustaceanvim" = "6.0.0"
 "mini.nvim" = "0.15.0"
 
 "blink" = { git = "saghen/blink.cmp", rev = "v1.1.1" }
 "monokai-pro" = { git = "loctvl842/monokai-pro.nvim" }
 
-[treesitter]
-auto_install = true
+tree-sitter-cpp = "scm"
+tree-sitter-python = "0.0.46"
+tree-sitter-rust = "0.0.49"
+"tokyonight.nvim" = "4.11.0"
+
+[plugins.nvim-treesitter]
+git = "nvim-treesitter/nvim-treesitter"
 
 [config]
 auto_setup = true
-colorscheme = "monokai-pro-classic"
+colorscheme = "tokyonight"
 
 [config.options]
 number = true
@@ -34,4 +38,3 @@ undofile = true
 expandtab = true
 inccommand = "split"
 signcolumn = "yes"
-scrolloff = 999

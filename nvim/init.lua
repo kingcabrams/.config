@@ -1,3 +1,3 @@
-require "mappings"
-require "rocks-nvim"
-
+require 'config.rocks'
+require 'config.keymaps'
+require 'config.lsp'
